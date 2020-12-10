@@ -21,4 +21,8 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn -B package --file pom.xml
+      run: mvn package --file petclinic/pom.xml
+    - name: Blabla
+      run: mvn --file petclinic-selenium/pom.xml -DskipTests install
+    - name: Druhe blabla
+      run: mvn -Dtest=PetclinicTest --file petclinic-selenium/pom.xml -Dbrowser=chrome -Dheadless=false test
